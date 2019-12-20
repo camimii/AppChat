@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "290379985007",
+    "firebase_url": "https://solemne03-camila-faundez.firebaseio.com",
+    "project_id": "solemne03-camila-faundez",
+    "storage_bucket": "solemne03-camila-faundez.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290379985007:android:6246f093ff5caaffc31d9a",
+        "android_client_info": {
+          "package_name": "com.example.solemne03_camila_faundez"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290379985007-f4v5v02n66db7ma6ik8rv3h74f903csq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDutFP_SHEfk6nLTTBZFTUrv7hHy4euJxc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290379985007-f4v5v02n66db7ma6ik8rv3h74f903csq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
