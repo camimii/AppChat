@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,6 +24,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText etEmail;
     private EditText etPass;
     private FirebaseAuth mAuth;
+    private ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         etEmail = findViewById(R.id.etEmailReg);
         etPass = findViewById(R.id.etPassReg);
+        mProgressBar = findViewById(R.id.progressBar2);
+        mProgressBar.setVisibility(ProgressBar.INVISIBLE);
 
         btnRegistro = findViewById(R.id.btnRegistro);
         btnRegistro.setOnClickListener(v -> Registro(
@@ -42,18 +46,21 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     }
-
+    //Registro firebase
     private void Registro(String email, String pass) {
-        //Registro firebase
-
         if (pass.length() >= 6){
+            mProgressBar.setVisibility(ProgressBar.VISIBLE);
             mAuth.createUserWithEmailAndPassword(email, pass)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
+
                             if (task.isSuccessful()) {
+                                FirebaseAuth.getInstance().signOut();
                                 Toast.makeText(RegisterActivity.this, "Exito al registrar.",
                                         Toast.LENGTH_SHORT).show();
+
                                 Handler hd = new Handler();
                                 hd.postDelayed(() -> {
                                     Intent intent = new Intent(RegisterActivity.this
